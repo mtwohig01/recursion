@@ -20,25 +20,27 @@
 public class bunnyEars {
 	public static void main (String [] args) {
 		int i;
-		print(bunny(0)); // 0
-		print(bunny(1)); // 2
-		print(bunny(2)); // 4
+		System.out.println( bunnyEars(0) ); // 0
+		System.out.println( bunnyEars(1) ); // 2
+		System.out.println( bunnyEars(2) ); // 4
+		System.out.println( bunnyEars(-1) ); // -2
 	}
 
-	private static int bunny(int n){ 
-		if (n == 0)
+	/**
+	 *
+	 * % Method Name : bunnyEars 
+	 * Description : Count the number of ears for a given number of bunnies
+	 *
+	 * @param number of bunnies
+	 * @return number of ears
+	 *
+	 */
+
+	private static int bunnyEars(int n){ 
+		if (n <= 0)
 			return 0;
 		else
-			return 2 + bunny(n-1) ; // return the previous
-									// number of bunnies and 2 more ears
-	}
-	
-
-	private static void print(String s){
-		System.out.println(s);
-	}
-
-	private static void print(int n){
-		System.out.println(n);
+			// return the previous number of bunnies ears plus 2 more ears.
+			return 2 + bunnyEars(n-1) ;
 	}
 }
